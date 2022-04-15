@@ -1,0 +1,36 @@
+{
+  "name": "kaios-mpc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build:kaios2": "npm run clean && export BROWSERSLIST_ENV=kaios2 && parcel build --no-source-maps --no-cache --target kaios2",
+    "build:kaios3": "npm run clean && export BROWSERSLIST_ENV=kaios3 && parcel build --no-source-maps --no-cache --target kaios3",
+    "clean": "rimraf ./dist"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^3.0.0",
+    "parcel": "^2.4.1",
+    "parcel-transformer-svelte3-plus": "^0.2.7",
+    "svelte": "^3.47.0",
+    "svelte-preprocess": "^4.10.6",
+    "typescript": "^4.6.3"
+  },
+  "staticFiles": {
+    "staticPath": "public"
+  },
+  "browserslist": {
+    "kaios2": "Firefox 48",
+    "kaios3": "Firefox 84"
+  },
+  "targets": {
+    "kaios2": {
+      "source": "src/index.html",
+      "distDir": "./dist"
+    },
+    "kaios3": {
+      "source": "src/index.html",
+      "distDir": "./dist"
+    }
+  }
+}
